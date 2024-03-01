@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Note Desu</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -18,11 +18,11 @@
             @if (Route::has('login'))
                 <livewire:welcome.navigation />
             @endif
-            <div class="p-6 mx-auto max-w-7x1 lg:pg-8">
+            <div class="flex p-6 mx-auto max-w-7x1 lg:pg-8">
                 <x-application-logo class='w-24 h-24 fill-current text-primary' />
                 <x-button primary xl href="{{route('register')}}">Get Started</x-button>
             </div>
-
+            
             
         </div>
     </body>
