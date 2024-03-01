@@ -19,10 +19,8 @@ new class extends Component {
         <div class="text-center">
             <p>Belum ada Notes</p>
             <br>
-            <x-button primary icon-right="plus">Buat Notes</x-button>
+            <x-button primary icon="plus" href="{{ route('notes.create') }}" wire:navigate >Buat Notes</x-button>
         </div>
-        
-        
     @else
         <div class="space-y-3">
             <div class="grid-cols-2 gap-4 mt-12">
