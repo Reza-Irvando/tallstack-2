@@ -11,8 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('notes', function (Blueprint $table) {
-            $table->string('recipient');
+        Schema::create('notes', function (Blueprint $table) {
+            $table->uuid('id');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('title');
+            $table->text('body');
+            $table->date('send_date');
+            $table->boolean('is_published')->default(false);
+            $table->integer('heart_count')->default(0);
+            $table->timestamps();
         });
     }
 
@@ -21,8 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('notes', function (Blueprint $table) {
-            $table->dropColumn('recipient');
-        });
+        Schema::dropIfExists('notes');
     }
 };

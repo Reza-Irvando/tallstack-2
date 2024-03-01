@@ -15,7 +15,7 @@ return new class extends Migration
             $table->uuid('id');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('title');
-            $table->text('desc');
+            $table->text('body');
             $table->date('send_date');
             $table->boolean('is_published')->default(false);
             $table->integer('heart_count')->default(0);
